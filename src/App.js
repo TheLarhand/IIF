@@ -19,15 +19,34 @@ function App() {
     console.log(posts);
   }
 
+  const createPost = (newPost) => {
+    setPosts([...posts, newPost])
+  }
+
+  const removePost = (id) => {
+    const tempPosts = posts.filter(post => {
+      const newPosts = post.id != id
+      return newPosts
+    })
+
+    console.log(tempPosts);
+
+    setPosts([...tempPosts])
+  }
+
   return (
     <div className="App">
       <Header/>
-      <PostForm/>
+      <PostForm 
+        createPost={createPost}
+      />
       <div className='mainContent'>
         <Filters/>
-        <Posts posts={posts}/>
+        <Posts
+         posts={posts}
+         removePost={removePost}
+        />
       </div>
-      <button onClick={fetchPosts}>clcik</button>
     </div>
   );
 }

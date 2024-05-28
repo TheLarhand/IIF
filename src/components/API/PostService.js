@@ -9,4 +9,14 @@ export default class PostService {
             console.log(e);
         }
     }
+
+    static addPost = (postData) => { 
+        axios.post('https://jsonplaceholder.typicode.com/posts', postData)
+          .then((response) => {
+            console.log('Пост успешно создан:', response.data);
+          })
+          .catch((error) => {
+            console.error('Ошибка при создании поста:', error);
+          });
+      };
 }

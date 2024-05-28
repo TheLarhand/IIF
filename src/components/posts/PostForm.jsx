@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import cl from './Posts.module.css';
+import PostService from '../API/PostService';
 
-export default function PostForm() {
+export default function PostForm({createPost}) {
   const [postData, setPostData] = useState({
     title: '',
     body: '',
-    userId: 1 // Здесь вы можете указать ID пользователя, создающего пост
+    userId: 1,
+    id: 101 
   });
 
   const handleChange = (e) => {
@@ -19,18 +20,11 @@ export default function PostForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    CreatePost(); 
+    PostService.addPost(postData);
+    createPost(postData);
   };
 
-  const CreatePost = () => { 
-    axios.post('https://jsonplaceholder.typicode.com/posts', postData)
-      .then((response) => {
-        console.log('Пост успешно создан:', response.data);
-      })
-      .catch((error) => {
-        console.error('Ошибка при создании поста:', error);
-      });
-  };
+
 
   return (
     <div className={cl.postForm}>

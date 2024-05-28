@@ -7,7 +7,7 @@ export default function Filters() {
       {/* Временно, будет удалено */}
       <ul>
         <li>filter 1</li>
-        <li>bbb 2</li>
+        <li>filter 2</li>
         <li>filter 3</li>
         <li>filter 4</li>
       </ul>
