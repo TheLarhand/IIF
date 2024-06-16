@@ -1,7 +1,7 @@
 import React from 'react'
 import cl from './Header.module.css'
 
-export default function Header() {
+export default function Header({active, setActive}) {
   return (
     <div className={cl.header}>
         <div className={cl.wrapper}>
@@ -11,8 +11,8 @@ export default function Header() {
             </div>
 
             <div className={cl.headerSide}>
-                <button>Регистрация</button>
-                <button>Войти</button>
+                <button onClick={() => {setActive(true)}}>Регистрация</button>
+                <button onClick={() => {setActive(true)}}>Войти</button>
             </div>
             
         </div>

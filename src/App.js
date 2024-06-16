@@ -5,8 +5,12 @@ import Posts from './components/posts/Posts';
 import { useEffect, useState } from 'react';
 import PostForm from './components/posts/PostForm';
 import PostService from './components/API/PostService';
+import Modal from './components/modal/Modal';
 
 function App() {
+
+  const [modalActive, setModalActive] = useState(false)
+
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -36,7 +40,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <Header
+        active={modalActive}
+        setActive={setModalActive}
+      />
       <PostForm 
         createPost={createPost}
       />
@@ -47,6 +54,10 @@ function App() {
          removePost={removePost}
         />
       </div>
+      <Modal
+        active={modalActive}
+        setActive={setModalActive}
+      />
     </div>
   );
 }
