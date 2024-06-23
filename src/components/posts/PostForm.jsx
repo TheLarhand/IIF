@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import cl from './Posts.module.css';
 import PostService from '../API/PostService';
 
-export default function PostForm({createPost}) {
+export default function PostForm({createPost, setActive, posts}) {
+
+  //нужно исправить
+
+  const lastPostId = posts.length > 0 ? posts[0].id : 0;
+
   const [postData, setPostData] = useState({
     title: '',
     body: '',
     userId: 1,
-    id: 101 
+    id: lastPostId + 1
   });
 
   const handleChange = (e) => {
@@ -22,6 +27,8 @@ export default function PostForm({createPost}) {
     e.preventDefault();
     PostService.addPost(postData);
     createPost(postData);
+
+    setActive(false)
   };
 
 

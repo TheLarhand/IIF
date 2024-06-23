@@ -3,13 +3,9 @@ import Filters from './components/filters/Filters';
 import Header from './components/header/Header';
 import Posts from './components/posts/Posts';
 import { useEffect, useState } from 'react';
-import PostForm from './components/posts/PostForm';
 import PostService from './components/API/PostService';
-import Modal from './components/modal/Modal';
 
 function App() {
-
-  const [modalActive, setModalActive] = useState(false)
 
   const [posts, setPosts] = useState([])
 
@@ -28,10 +24,7 @@ function App() {
   }
 
   const removePost = (id) => {
-    const tempPosts = posts.filter(post => {
-      const newPosts = post.id != id
-      return newPosts
-    })
+    const tempPosts = posts.filter(post => post.id !== id)
 
     console.log(tempPosts);
 
@@ -40,24 +33,15 @@ function App() {
 
   return (
     <div className="App">
-      <Header
-        active={modalActive}
-        setActive={setModalActive}
-      />
-      <PostForm 
-        createPost={createPost}
-      />
+      <Header/>
       <div className='mainContent'>
         <Filters/>
         <Posts
-         posts={posts}
-         removePost={removePost}
+          posts={posts}
+          createPost={createPost}
+          removePost={removePost}
         />
       </div>
-      <Modal
-        active={modalActive}
-        setActive={setModalActive}
-      />
     </div>
   );
 }
