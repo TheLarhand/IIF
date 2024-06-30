@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import cl from './Posts.module.css';
 import PostService from '../API/PostService';
 
-export default function PostForm({createPost, setActive, posts}) {
-
-  //нужно исправить
-
+const PostForm = ({ createPost, setActive, posts }) => {
   const lastPostId = posts.length > 0 ? posts[0].id : 0;
 
   const [postData, setPostData] = useState({
@@ -27,11 +24,8 @@ export default function PostForm({createPost, setActive, posts}) {
     e.preventDefault();
     PostService.addPost(postData);
     createPost(postData);
-
-    setActive(false)
+    setActive(false);
   };
-
-
 
   return (
     <div className={cl.postForm}>
@@ -58,4 +52,6 @@ export default function PostForm({createPost, setActive, posts}) {
       </form>
     </div>
   );
-}
+};
+
+export default PostForm;

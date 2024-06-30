@@ -1,7 +1,7 @@
-import React from 'react'
-import cl from './Filters.module.css'
+import React from 'react';
+import cl from './Filters.module.css';
 
-export default function Filters() {
+const Filters = () => {
   return (
     <div className={cl.filters}>
       {/* Временно, будет удалено */}
@@ -12,5 +12,7 @@ export default function Filters() {
         <li>filter 4</li>
       </ul>
     </div>
-  )
-}
+  );
+};
+
+export default Filters;
