@@ -3,6 +3,7 @@ import Post from './Post';
 import cl from './Posts.module.css';
 import Modal from '../modal/Modal';
 import PostForm from './PostForm';
+import Button from '../UI/Button';
 
 const Posts = ({ posts, createPost, removePost }) => {
   const [modalActive, setModalActive] = useState(false);
@@ -11,9 +12,7 @@ const Posts = ({ posts, createPost, removePost }) => {
 
   return (
     <div className={cl.posts}>
-      <button onClick={() => setModalActive(true)}>
-        создать пост
-      </button>
+      <Button click={() => setModalActive(true)}>создать пост</Button>
       {reversedPosts.map(post => (
         <Post
           post={post}

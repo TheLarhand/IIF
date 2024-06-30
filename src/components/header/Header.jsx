@@ -3,6 +3,7 @@ import cl from './Header.module.css';
 import Modal from '../modal/Modal';
 import Registration from './Registration';
 import Login from './Login';
+import Button from '../UI/Button';
 
 const Header = () => {
   const [modalActive, setModalActive] = useState({ reg: false, log: false });
@@ -11,16 +12,16 @@ const Header = () => {
     <div className={cl.header}>
       <div className={cl.wrapper}>
         <div className={cl.headerSide}>
-          <h1>IgorIgorForum</h1>
+          <h1>IIF</h1>
         </div>
 
         <div className={cl.headerSide}>
-          <button onClick={() => setModalActive({ ...modalActive, reg: true })}>
+          <Button click={() => setModalActive({ ...modalActive, reg: true })}>
             Регистрация
-          </button>
-          <button onClick={() => setModalActive({ ...modalActive, log: true })}>
-            Войти
-          </button>
+          </Button>
+          <Button click={() => setModalActive({ ...modalActive, log: true })}>
+          Войти
+          </Button>
         </div>
       </div>
 

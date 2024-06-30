@@ -1,5 +1,6 @@
 import React from 'react';
 import cl from './Posts.module.css';
+import Button from '../UI/Button';
 
 const Post = ({post, removePost}) => {
     const handleClick = () => {
@@ -9,7 +10,7 @@ const Post = ({post, removePost}) => {
         <div className={cl.post}>
             <h3>{post.title}</h3>
             <p>{post.body}</p>
-            <button onClick={handleClick}>удалить</button>
+            <Button click={handleClick} margin={"10px 0 0 auto"}>удалить</Button>
         </div>
     );
 };

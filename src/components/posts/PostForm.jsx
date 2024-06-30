@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import cl from './Posts.module.css';
 import PostService from '../API/PostService';
+import Input from '../UI/Input';
+import Button from '../UI/Button';
+import TextArea from '../UI/TextArea';
 
 const PostForm = ({ createPost, setActive, posts }) => {
   const lastPostId = posts.length > 0 ? posts[0].id : 0;
@@ -29,26 +32,28 @@ const PostForm = ({ createPost, setActive, posts }) => {
 
   return (
     <div className={cl.postForm}>
-      <h2>Создать пост</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Заголовок:</label>
-          <input
+          <label className={cl.myLabel}>Заголовок поста:</label>
+          <Input
             type="text"
             name="title"
             value={postData.title}
             onChange={handleChange}
+            width='100%'
           />
         </div>
         <div>
-          <label>Текст:</label>
-          <textarea
+          <label className={cl.myLabel}>Текст поста:</label>
+          <TextArea
             name="body"
             value={postData.body}
             onChange={handleChange}
+            width='100%'
+            height='300px'
           />
         </div>
-        <button type="submit">Создать пост</button>
+        <Button type="submit" margin={"10px 0 0 auto"}>Создать пост</Button>
       </form>
     </div>
   );
