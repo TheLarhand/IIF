@@ -8,6 +8,14 @@ import Button from '../UI/Button';
 const Header = () => {
   const [modalActive, setModalActive] = useState({ reg: false, log: false });
 
+  const switchModal = () => {
+    if (modalActive.reg){
+      setModalActive({ reg: false, log: true })
+    } else if (modalActive.log){
+      setModalActive({ reg: true, log: false })
+    }
+  }
+
   return (
     <div className={cl.header}>
       <div className={cl.wrapper}>
@@ -26,11 +34,15 @@ const Header = () => {
       </div>
 
       <Modal active={modalActive.reg} setActive={setModalActive}>
-        <Registration />
+        <Registration
+          switchModal={switchModal}
+        />
       </Modal>
 
       <Modal active={modalActive.log} setActive={setModalActive}>
-        <Login />
+        <Login 
+          switchModal={switchModal} 
+        />
       </Modal>
     </div>
   );

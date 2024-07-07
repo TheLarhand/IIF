@@ -8,6 +8,7 @@
     font-weight: 500;
     border-radius: 5px;
     padding: 5px 15px;
+    cursor: pointer;
 
     transition: 0.2s;
 }
@@ -18,6 +19,28 @@
 
 .btn:active {
     background-color: rgb(57, 156, 87);
+}
+
+.btn2 {
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(154, 36, 201);
+    font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    font-weight: 500;
+    padding: 5px 15px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn2:hover {
+    color: rgb(115, 19, 153);
+}
+
+.btn2:hover:active {
+    color: rgb(72, 9, 97);
 }
 
 .myInput {
@@ -40,3 +63,46 @@
     border-color: rgb(178, 163, 184); 
     outline: none; 
   }
+
+.heading {
+    width: fit-content;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.myLabel {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.socialBtn {
+    width: fit-content;
+    display: flex;
+    gap: 3px;
+    border: 0;
+    background-color: rgb(130, 139, 255);
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.socialBtn:hover {
+    background-color: rgb(106, 113, 216);
+}
+
+.socialBtn:active {
+    background-color: rgb(87, 93, 185);
+}
+
+.socialBtn img {
+    width: 20px;
+}
