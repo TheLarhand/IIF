@@ -1,27 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cl from './Posts.module.css';
 import Button from '../UI/Button';
 import Heading from '../UI/Heading';
-import Like from '../UI/Like';
-import Comment from '../UI/Comment';
-import Share from '../UI/Share';
+import LikeBtn from '../UI/LikeBtn';
+import CommentBtn from '../UI/CommentBtn';
+import ShareBtn from '../UI/ShareBtn';
+import Comments from './comments/Comments';
 
 const Post = ({post, removePost}) => {
+    const[commentsSection, setCommentsSection] = useState(false)
+
+    const toogleComments = () => {
+        setCommentsSection(!commentsSection)
+    }
+
     const handleClick = () => {
         removePost(post.id)
     } 
     return (
         <div className={cl.post}>
             <Heading size={"20px"} color="rgb(130, 139, 255)">{post.title}</Heading>
-            <p>{post.body}</p>
+            <p className={cl.postBody}>{post.body}</p>
             <div className={cl.buttons}>
                 <div className={cl.socialBox}>
-                    <Like>123</Like>
-                    <Comment>123</Comment>
-                    <Share>123</Share>
+                    <LikeBtn>123</LikeBtn>
+                    <CommentBtn click={toogleComments}>123</CommentBtn>
+                    <ShareBtn>123</ShareBtn>
                 </div>
                 <Button click={handleClick} margin={"10px 0 0 auto"}>удалить</Button>
             </div>
+            {commentsSection ? 
+            <Comments/> : 
+            <div></div>}
             
         </div>
     );

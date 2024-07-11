@@ -1,8 +1,8 @@
 import React from 'react';
 import cl from './UI.module.css'
-import image from '../../images/comment.svg'
+import image from '../../images/share.svg'
 
-const Comment = ({children}) => {
+const ShareBtn = ({children}) => {
     return (
         <div className={cl.socialBtn}>
             <img src={image}/> {children} 
@@ -10,4 +10,4 @@ const Comment = ({children}) => {
     );
 };
 
-export default Comment;
+export default ShareBtn;

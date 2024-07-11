@@ -8,6 +8,9 @@
     padding: 10px;
     background-color: white;
 }
+.postBody {
+    margin: 10px 0;
+}
 .postForm {
     width: 1000px;
     margin: 20px;

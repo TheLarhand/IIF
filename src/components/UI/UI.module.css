@@ -5,6 +5,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    font-size: 13px;
     font-weight: 500;
     border-radius: 5px;
     padding: 5px 15px;
@@ -28,6 +29,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    font-size: 13px;
     font-weight: 500;
     padding: 5px 15px;
     cursor: pointer;
@@ -88,6 +90,7 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     font-weight: 500;
+    font-size: 13px;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;

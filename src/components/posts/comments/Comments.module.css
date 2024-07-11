@@ -1,0 +1,50 @@
+.form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.commentWrapper {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    margin-top: 10px;
+    border-top: 2px solid rgba(130, 138, 255, 0.317);
+    border-left: 2px solid rgba(130, 138, 255, 0.317);
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 10px 0 0 0;
+}
+.ava {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.comment {
+    width: 100%;
+}
+.comment h4 {
+    color: rgb(154, 36, 201);
+}
+.comment p {
+    margin: 10px 0;
+}
+.commentBottom {
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.commentBottomLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.commentBottomLeft p {
+    font-size: 13px;
+
+    margin: 0;
+}
+.anwsers {
+    margin-left: 40px;
+}
