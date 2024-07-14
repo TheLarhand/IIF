@@ -1,0 +1,9 @@
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(130, 138, 255, 0.623);
+}

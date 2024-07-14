@@ -3,13 +3,13 @@ import cl from './Comments.module.css'
 import Button from '../../UI/Button'
 import LikeBtn from '../../UI/LikeBtn'
 import Heading from '../../UI/Heading'
-import emptyAva from '../../../images/empty_ava.png'
+import Ava from '../../UI/Ava'
 
 const Comment = ({info}) => {
   return (
     <div>
       <div className={cl.commentWrapper}>
-        <img className={cl.ava} src={info.ava === undefined ? emptyAva : info.ava} alt="ava" /> 
+        {info.ava === undefined ? <Ava/> : <Ava src={info.ava}/>}
           <div className={cl.comment}>
             <Heading size={"16px"} color="rgb(130, 139, 255)">{info.username}</Heading>
             <p>{info.comment}</p>

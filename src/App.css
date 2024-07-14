@@ -2,13 +2,11 @@
   margin: 0;
 }
 
-.App {
+body {
   background-color: rgb(103, 109, 121);
 }
 
-.mainContent {
+.content {
   width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
 }

@@ -1,6 +1,5 @@
 .posts {
     display: grid;
-    grid-template-columns: 900px;
 }
 .post {
     border-radius: 10px;

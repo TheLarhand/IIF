@@ -4,6 +4,7 @@ import cl from './Posts.module.css';
 import Modal from '../modal/Modal';
 import PostForm from './PostForm';
 import Button from '../UI/Button';
+import Heading from '../UI/Heading';
 
 const Posts = ({ posts, createPost, removePost }) => {
   const [modalActive, setModalActive] = useState(false);
@@ -13,13 +14,18 @@ const Posts = ({ posts, createPost, removePost }) => {
   return (
     <div className={cl.posts}>
       <Button click={() => setModalActive(true)}>создать пост</Button>
-      {reversedPosts.map(post => (
-        <Post
-          post={post}
-          key={post.id}
-          removePost={removePost}
-        />
-      ))}
+
+      {reversedPosts.length === 0 ?
+        <Heading color='white'>Постов нет :(</Heading> :
+          reversedPosts.map(post => (
+            <Post
+              post={post}
+              key={post.id}
+              removePost={removePost}
+            />
+          ))
+      }
+
 
       <Modal
         active={modalActive}

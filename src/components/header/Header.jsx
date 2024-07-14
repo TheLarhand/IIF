@@ -4,8 +4,9 @@ import Modal from '../modal/Modal';
 import Registration from './Registration';
 import Login from './Login';
 import Button from '../UI/Button';
+import Ava from '../UI/Ava';
 
-const Header = () => {
+const Header = ({changePage}) => {
   const [modalActive, setModalActive] = useState({ reg: false, log: false });
 
   const switchModal = () => {
@@ -20,7 +21,7 @@ const Header = () => {
     <div className={cl.header}>
       <div className={cl.wrapper}>
         <div className={cl.headerSide}>
-          <h1>IIF</h1>
+          <h1 onClick={() => changePage("mainPage")}>IIF</h1>
         </div>
 
         <div className={cl.headerSide}>
@@ -30,6 +31,7 @@ const Header = () => {
           <Button click={() => setModalActive({ ...modalActive, log: true })}>
           Войти
           </Button>
+          <Ava onClick={() => changePage("profile")}/>
         </div>
       </div>
 
