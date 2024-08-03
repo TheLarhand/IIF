@@ -1,20 +1,17 @@
 import './App.css';
-import Filters from './components/filters/Filters';
 import Header from './components/header/Header';
-import Posts from './components/posts/Posts';
 import Profile from './components/profile/Profile';
 import { useEffect, useState } from 'react';
 import PostService from './components/API/PostService';
 import MainPage from './components/mainPage/MainPage';
-
 
 function App() {
 
   const [posts, setPosts] = useState([])
 
   const [contentPage, setContentPage] = useState({
-    mainPage: true , 
-    profile: false ,
+    mainPage: true, 
+    profile: false,
   })
 
   useEffect(() => {
@@ -44,11 +41,13 @@ function App() {
       setContentPage({
         mainPage: true,
         profile: false,
+        profileEdit: false,
       });
     } else if (page === "profile") {
       setContentPage({
         mainPage: false,
         profile: true,
+        profileEdit: false,
       });
     }
   }
@@ -69,7 +68,7 @@ function App() {
         createPost={createPost}
         removePost={removePost}
       />
-  )} 
+    )} 
 
   return (
     <div className="App">
