@@ -109,3 +109,44 @@
 .socialBtn img {
     width: 20px;
 }
+
+.loader {
+    width: 100px;
+    height: 100px;
+    border-top: 10px solid rgb(77, 190, 111);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgb(77, 190, 111);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    animation: loader infinite 2s linear;
+}
+
+.innerLoader {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-top: 10px solid rgb(87, 93, 185);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgb(87, 93, 185);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    animation: innerLoader infinite 1s linear;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes innerLoader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}

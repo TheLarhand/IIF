@@ -30,8 +30,7 @@ const ProfileEdit = ({userInfo, setUserInfo, setEditingProfile}) => {
             setNotificationType(2)
         } else {
             setUserInfo(newUserInfo)
-            // setNewUserInfo({...userInfo, password: ""})
-            setNewUserInfo({name: "", email: "", password: ""})
+            setNewUserInfo({...userInfo, password: ""})
             setRepeatPassword("");
             setEditingProfile(false)
             setNotificationType(0)

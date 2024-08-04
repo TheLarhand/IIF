@@ -8,6 +8,7 @@ import MainPage from './components/mainPage/MainPage';
 function App() {
 
   const [posts, setPosts] = useState([])
+  const [isPostsLoading, setIsPostsLoading] = useState(false)
 
   const [contentPage, setContentPage] = useState({
     mainPage: true, 
@@ -19,12 +20,14 @@ function App() {
   }, [])
 
   async function fetchPosts() {
+    setIsPostsLoading(true)
     try {
       const fetchedPosts = await PostService.getAll();
       setPosts(fetchedPosts);
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
+    setIsPostsLoading(false)
   } 
 
   const createPost = (newPost) => {
@@ -58,6 +61,7 @@ function App() {
     contentToShow = (
       <MainPage
         posts={posts}
+        isPostsLoading={isPostsLoading}
         createPost={createPost}
         removePost={removePost}
       />

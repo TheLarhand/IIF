@@ -1,4 +1,6 @@
 .filters {
     width: 400px;
     background-color: white;
+    box-sizing: border-box;
+    border-right: 15px solid rgb(130, 139, 255);
 }
