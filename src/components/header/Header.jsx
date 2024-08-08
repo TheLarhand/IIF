@@ -5,6 +5,7 @@ import Registration from './Registration';
 import Login from './Login';
 import Button from '../UI/Button';
 import Ava from '../UI/Ava';
+import Logo from '../UI/Logo';
 
 const Header = ({changePage}) => {
   const [modalActive, setModalActive] = useState({ reg: false, log: false });
@@ -21,7 +22,7 @@ const Header = ({changePage}) => {
     <div className={cl.header}>
       <div className={cl.wrapper}>
         <div className={cl.headerSide}>
-          <h1 onClick={() => changePage("mainPage")}>IIF</h1>
+          <Logo onClick={() => changePage("mainPage")}/>
         </div>
 
         <div className={cl.headerSide}>
