@@ -1,7 +1,7 @@
 .btn {
     border: 0;
-    background-color: rgb(77, 190, 111);
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
     font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -15,17 +15,17 @@
 }
 
 .btn:hover {
-    background-color: rgb(68, 170, 99);
+    background-color: var(--secondary-color-hover);
 }
 
 .btn:active {
-    background-color: rgb(57, 156, 87);
+    background-color: var(--secondary-color-active);
 }
 
 .btn2 {
     border: 0;
     background-color: rgba(255, 255, 255, 0);
-    color: rgb(154, 36, 201);
+    color: var(--link-color);
     font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -38,11 +38,11 @@
 }
 
 .btn2:hover {
-    color: rgb(115, 19, 153);
+    color: var(--link-color-hover);
 }
 
 .btn2:hover:active {
-    color: rgb(72, 9, 97);
+    color: var(--link-color-active);
 }
 
 .myInput {
@@ -52,9 +52,9 @@
     box-sizing: border-box;
     resize: none;
     border-radius: 5px;
-    border: 2px solid rgb(216, 208, 219);
+    border: 2px solid var(--border-color);
     padding: 5px 10px;
-    color: rgb(48, 48, 48);
+    color: var(--text-color);
     font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -62,7 +62,7 @@
 }
 
 .myInput:focus {
-    border-color: rgb(178, 163, 184); 
+    border-color: var(--border-color-focus); 
     outline: none; 
   }
 
@@ -84,8 +84,8 @@
     display: flex;
     gap: 3px;
     border: 0;
-    background-color: rgb(130, 139, 255);
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
     font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -99,11 +99,11 @@
 }
 
 .socialBtn:hover {
-    background-color: rgb(106, 113, 216);
+    background-color: var(--primary-color-hover);
 }
 
 .socialBtn:active {
-    background-color: rgb(87, 93, 185);
+    background-color: var(--primary-color-active);
 }
 
 .socialBtn img {
@@ -113,9 +113,9 @@
 .loader {
     width: 100px;
     height: 100px;
-    border-top: 10px solid rgb(77, 190, 111);
+    border-top: 10px solid var(--secondary-color);
     border-right: 10px solid rgba(0, 0, 0, 0);
-    border-bottom: 10px solid rgb(77, 190, 111);
+    border-bottom: 10px solid var(--secondary-color);
     border-left: 10px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
     animation: loader infinite 2s linear;
@@ -125,9 +125,9 @@
     width: 80px;
     height: 80px;
     background-color: white;
-    border-top: 10px solid rgb(87, 93, 185);
+    border-top: 10px solid var(--primary-color-active);
     border-right: 10px solid rgba(0, 0, 0, 0);
-    border-bottom: 10px solid rgb(87, 93, 185);
+    border-bottom: 10px solid var(--primary-color-active);
     border-left: 10px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
     animation: innerLoader infinite 1s linear;

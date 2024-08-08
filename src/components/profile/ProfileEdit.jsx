@@ -3,6 +3,7 @@ import Ava from '../UI/Ava';
 import Heading from '../UI/Heading';
 import Input from '../UI/Input';
 import Button from '../UI/Button';
+import cl from './Profile.module.css'
 
 const ProfileEdit = ({userInfo, setUserInfo, setEditingProfile}) => {
 
@@ -35,44 +36,80 @@ const ProfileEdit = ({userInfo, setUserInfo, setEditingProfile}) => {
             setEditingProfile(false)
             setNotificationType(0)
         }
-        
+    }
+
+    const closeEditing = () => {
+        setNewUserInfo({...userInfo, password: ""})
+        setRepeatPassword("");
+        setEditingProfile(false)
     }
 
     return (
         <div>
-            <div>
-                <Ava size='250px' />
-                <Heading>Имя</Heading>
-                <Input
-                    name="name"
-                    value={newUserInfo.name}
-                    onChange={handleInputChange}
-                />
-                <Heading>Почта</Heading>
-                <Input
-                    name="email"
-                    value={newUserInfo.email}
-                    onChange={handleInputChange}
-                />
-                <Heading>Старый пароль</Heading>
-                <Input 
-                    name="repeatPassword"
-                    value={repeatPassword}
-                    onChange={handlePasswordChange}
-                    type={"password"}
-                />
-                <Heading>Новый пароль</Heading>
-                <Input
-                    name="password"
-                    value={newUserInfo.password}
-                    onChange={handleInputChange}
-                    type={"password"}
-                />
+            <div className={cl.profileEdit}>
 
-                {notificationType === 1 && <span>Введите пароль!</span>}
-                {notificationType === 2 && <span>Пароли не совпадают!</span>}
+                <div className={cl.editLeft}>
+                    <Ava size='250px' />
+                    <Button>Изменить фото</Button>
+                </div>
 
-                <Button click={updateUserInfo}>Сохранить</Button>
+                <div className={cl.editRight}>
+
+                    <div className={cl.editRightRow}>
+                        <label>Имя</label>
+                        <Input
+                            name="name"
+                            value={newUserInfo.name}
+                            onChange={handleInputChange}
+                            width="600px"
+                            placeholder={"Введите имя"}
+                        />
+                    </div>
+                    
+                    <div className={cl.editRightRow}>
+                        <label>Почта</label>
+                        <Input
+                            name="email"
+                            value={newUserInfo.email}
+                            onChange={handleInputChange}
+                            width="600px"
+                            placeholder={"Введите почту"}
+                        />
+                    </div>
+
+                    <div className={cl.editRightRow}>
+                        <label>Старый пароль</label>
+                        <Input 
+                            name="repeatPassword"
+                            value={repeatPassword}
+                            onChange={handlePasswordChange}
+                            type={"password"}
+                            width="600px"
+                            placeholder={"Введите старый пароль"}
+                        />
+                    </div>
+                    
+                    <div className={cl.editRightRow}>
+                        <label>Новый пароль</label>
+                        <Input
+                            name="password"
+                            value={newUserInfo.password}
+                            onChange={handleInputChange}
+                            type={"password"}
+                            width="600px"
+                            placeholder={"Введите новый пароль"}
+                        />
+                    </div>
+                    
+                    {notificationType === 1 && <span>Введите пароль!</span>}
+                    {notificationType === 2 && <span>Пароли не совпадают!</span>}
+                </div>
+                
+                <div className={cl.btnBox}>
+                    <Button click={closeEditing}>Сбросить</Button>
+                    <Button click={updateUserInfo}>Сохранить</Button>
+                </div>
+                
             </div>
         </div>
     );

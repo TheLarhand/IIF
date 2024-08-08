@@ -1,6 +1,6 @@
 .filters {
     width: 400px;
-    background-color: white;
+    background-color: var(--background-color-light);
     box-sizing: border-box;
-    border-right: 15px solid rgb(130, 139, 255);
+    border-right: 15px solid var(--primary-color);
 }

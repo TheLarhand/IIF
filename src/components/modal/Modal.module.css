@@ -21,7 +21,7 @@
 .modal_content {
     width: fit-content;
     height: fit-content;
-    background-color: white;
+    background-color: var(--background-color-light);
     border-radius: 20px;
     transition: 0.4s;
     transform: scale(0);

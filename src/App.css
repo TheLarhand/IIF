@@ -1,9 +1,36 @@
+:root {
+  /* Основные цвета */
+  --primary-color: rgb(130, 139, 255);
+  --primary-color-hover: rgb(106, 113, 216);
+  --primary-color-active: rgb(87, 93, 185);
+  --secondary-color: rgb(77, 190, 111);
+  --secondary-color-hover: rgb(68, 170, 99);
+  --secondary-color-active: rgb(57, 156, 87);
+  --link-color: rgb(154, 36, 201);
+  --link-color-hover: rgb(115, 19, 153);
+  --link-color-active: rgb(72, 9, 97);
+
+  /* Округленные прозрачности */
+  --primary-color-opacity-60: rgba(130, 139, 255, 0.6);
+  --primary-color-opacity-30: rgba(130, 139, 255, 0.3);
+
+  /* Остальные цвета */
+  --background-color-light: rgb(245, 245, 245);
+  --background-color-dark: rgb(103, 109, 121);
+  --text-color: rgb(48, 48, 48);
+  --text-color-light: rgb(255, 255, 255);
+  --text-color-dark: rgb(0, 0, 0);
+  --border-color: rgb(216, 208, 219);
+  --border-color-focus: rgb(178, 163, 184);
+  --error-color: rgb(221, 47, 35);
+}
+
 * {
   margin: 0;
 }
 
 body {
-  background-color: rgb(103, 109, 121);
+  background-color: var(--background-color-dark);
 }
 
 .content {
