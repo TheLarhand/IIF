@@ -4,3 +4,22 @@
     box-sizing: border-box;
     border-right: 15px solid var(--primary-color);
 }
+.filter {
+    margin-top: 10px;
+    margin-left: 30px;
+    padding: 5px 20px;
+    font-size: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-radius: 15px 0 0 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.filter:hover {
+    margin-left: 10px;
+}
+.filter:active {
+    margin-left: 0;
+    border-radius: 0;
+    background-color: var(--secondary-color);
+}
