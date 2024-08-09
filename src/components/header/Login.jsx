@@ -8,7 +8,7 @@ import Label from '../UI/Label';
 const Login = ({switchModal}) => {
     return (
         <div className={cl.form}>
-            <Heading>Авторизация</Heading>
+            <Heading color='var(--primary-color)'>Авторизация</Heading>
             <Label className={cl.myLabel} width={"100%"}>Логин</Label>
             <Input 
                 type="text"

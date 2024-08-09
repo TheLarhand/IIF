@@ -10,6 +10,7 @@
 }
 .postBody {
     margin: 10px 0;
+    color: var(--text-color);
 }
 .postForm {
     width: 1000px;

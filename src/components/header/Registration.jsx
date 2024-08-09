@@ -8,7 +8,7 @@ import Label from '../UI/Label';
 const Registration = ({switchModal}) => {
     return (
         <div className={cl.form}>
-            <Heading>Регистрация</Heading>
+            <Heading color='var(--primary-color)'>Регистрация</Heading>
             <Label className={cl.myLabel} width={"100%"}>Логин</Label>
             <Input 
                 type="text"

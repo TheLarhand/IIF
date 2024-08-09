@@ -1,7 +1,7 @@
 import React from 'react';
 import cl from "./UI.module.css"
 
-const Heading = ({children, size, color = "black"}) => {
+const Heading = ({children, size, color = "var(--text-color)"}) => {
 
     const boxStyle = {
         fontSize: size,

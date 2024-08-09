@@ -54,7 +54,7 @@
     border-radius: 5px;
     border: 2px solid var(--border-color);
     padding: 5px 10px;
-    color: var(--text-color);
+    color: var(--text-color-dark);
     font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

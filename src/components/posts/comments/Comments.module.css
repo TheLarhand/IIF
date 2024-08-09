@@ -8,17 +8,20 @@
     align-items: start;
     gap: 10px;
     margin-top: 10px;
-    border-top: 2px solid rgba(130, 138, 255, 0.317);
-    border-left: 2px solid rgba(130, 138, 255, 0.317);
+    border-top: 2px solid var(--primary-color-opacity-30);
+    border-left: 2px solid var(--primary-color-opacity-30);
     padding-top: 10px;
     padding-left: 10px;
     border-radius: 10px 0 0 0;
+}
+.commentWrapper p {
+    color: var(--text-color);
 }
 .comment {
     width: 100%;
 }
 .comment h4 {
-    color: rgb(154, 36, 201);
+    color: rgb(80, 21, 104);
 }
 .comment p {
     margin: 10px 0;

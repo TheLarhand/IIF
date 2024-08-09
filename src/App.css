@@ -6,8 +6,8 @@
   --secondary-color: rgb(77, 190, 111);
   --secondary-color-hover: rgb(68, 170, 99);
   --secondary-color-active: rgb(57, 156, 87);
-  --link-color: rgb(154, 36, 201);
-  --link-color-hover: rgb(115, 19, 153);
+  --link-color: rgb(198, 52, 255);
+  --link-color-hover: rgb(168, 0, 235);
   --link-color-active: rgb(72, 9, 97);
 
   /* Округленные прозрачности */
@@ -15,9 +15,9 @@
   --primary-color-opacity-30: rgba(130, 139, 255, 0.3);
 
   /* Остальные цвета */
-  --background-color-light: rgb(245, 245, 245);
-  --background-color-dark: rgb(103, 109, 121);
-  --text-color: rgb(48, 48, 48);
+  --background-color-light: rgb(67, 66, 77);
+  --background-color-dark: rgb(34, 39, 51);
+  --text-color: rgb(134, 156, 168);
   --text-color-light: rgb(255, 255, 255);
   --text-color-dark: rgb(0, 0, 0);
   --border-color: rgb(216, 208, 219);
