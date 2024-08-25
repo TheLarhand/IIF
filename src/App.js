@@ -1,3 +1,4 @@
+import { usePosts } from './hooks/usePosts';
 import './App.css';
 import Header from './components/header/Header';
 import Profile from './components/profile/Profile';
@@ -30,6 +31,14 @@ function App() {
     setIsPostsLoading(false)
   } 
 
+  const[filter, setFilter] = useState({
+    sort: '',
+    sortInvert: false, 
+    query: '', 
+  })
+
+  const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.sortInvert, filter.query)
+
   const createPost = (newPost) => {
     setPosts([...posts, newPost])
   }
@@ -60,7 +69,7 @@ function App() {
   if(contentPage.mainPage) {
     contentToShow = (
       <MainPage
-        posts={posts}
+        posts={sortedAndSearchedPosts}
         isPostsLoading={isPostsLoading}
         createPost={createPost}
         removePost={removePost}
@@ -68,7 +77,7 @@ function App() {
     )} else if (contentPage.profile) {
     contentToShow = (
       <Profile 
-        posts={posts}
+        posts={sortedAndSearchedPosts}
         createPost={createPost}
         removePost={removePost}
       />

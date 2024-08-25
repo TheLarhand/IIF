@@ -29,3 +29,10 @@
     height: fit-content;
     gap: 10px;
 }
+
+.myLabel {
+    display: block;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 10px 0;
+}
