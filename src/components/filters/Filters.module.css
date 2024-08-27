@@ -1,5 +1,5 @@
 .filters {
-    width: 400px;
+    width: 550px;
     background-color: var(--background-color-light);
     box-sizing: border-box;
     border-right: 15px solid var(--primary-color);
@@ -14,12 +14,15 @@
     border-radius: 15px 0 0 15px;
     cursor: pointer;
     transition: 0.2s;
+    user-select: none;
 }
 .filter:hover {
     margin-left: 10px;
 }
 .filter:active {
-    margin-left: 0;
-    border-radius: 0;
+    background-color: var(--secondary-color);
+}
+.checkedFilter {
+    margin-left: 10px;
     background-color: var(--secondary-color);
 }

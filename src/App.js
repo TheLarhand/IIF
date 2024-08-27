@@ -24,6 +24,7 @@ function App() {
     setIsPostsLoading(true)
     try {
       const fetchedPosts = await PostService.getAll();
+      console.log(fetchedPosts); // Проверьте структуру данных
       setPosts(fetchedPosts);
     } catch (error) {
       console.error('Error fetching posts:', error);
@@ -71,6 +72,8 @@ function App() {
       <MainPage
         posts={sortedAndSearchedPosts}
         isPostsLoading={isPostsLoading}
+        filter={filter}
+        setFilter={setFilter}
         createPost={createPost}
         removePost={removePost}
       />
@@ -78,6 +81,7 @@ function App() {
     contentToShow = (
       <Profile 
         posts={sortedAndSearchedPosts}
+        isPostsLoading={isPostsLoading}
         createPost={createPost}
         removePost={removePost}
       />

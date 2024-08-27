@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import ProfileInfo from './ProfileInfo';
 import Posts from '../posts/Posts';
 import ProfileEdit from './ProfileEdit';
+import Loader from '../UI/Loader';
 
-const Profile = ({posts, createPost, removePost}) => {
+const Profile = ({posts, isPostsLoading, createPost, removePost}) => {
 
     const [editingProfile, setEditingProfile] = useState(false)
 
@@ -33,6 +34,17 @@ const Profile = ({posts, createPost, removePost}) => {
                         createPost={createPost}
                         removePost={removePost}
                     />
+
+                    {isPostsLoading
+                    ? 
+                    <Loader/>
+                    : 
+                    <Posts
+                        posts={posts}
+                        createPost={createPost}
+                        removePost={removePost}
+                    />
+                    }
                 </div>
             }
         </div>
