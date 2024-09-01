@@ -18,6 +18,8 @@ const MainPage = ({posts, isPostsLoading, filter, setFilter, createPost, removeP
                         setFilter={setFilter}
                     />
                     <Posts
+                        filter={filter}
+                        setFilter={setFilter}
                         posts={posts}
                         createPost={createPost}
                         removePost={removePost}
