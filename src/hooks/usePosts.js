@@ -41,5 +41,3 @@ export const usePosts = (posts, sort, sortInvert, query) => {
 
       return sortedAndSearchedPosts;
 }
-
-// Сделай фильтры

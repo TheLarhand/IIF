@@ -150,3 +150,18 @@
         transform: rotate(-360deg);
     }
 }
+
+.pagination {
+    margin: 0 auto;
+    display: flex;
+    gap: 5px;
+}
+
+.page {
+    background-color: white;
+    cursor: pointer;
+    padding: 2px;
+}
+.page__current {
+    color: var(--secondary-color);
+}

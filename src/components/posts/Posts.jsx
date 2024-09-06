@@ -6,8 +6,9 @@ import PostForm from './PostForm';
 import Button from '../UI/Button';
 import Heading from '../UI/Heading';
 import Search from './Search';
+import Pagination from '../UI/Pagination';
 
-const Posts = ({filter, setFilter, posts, createPost, removePost }) => {
+const Posts = ({filter, setFilter, posts, changePostsPage, pagesArray, page, setPage, createPost, removePost }) => {
   const [modalActive, setModalActive] = useState(false);
 
   const reversedPosts = [...posts].reverse();
@@ -20,6 +21,12 @@ const Posts = ({filter, setFilter, posts, createPost, removePost }) => {
       />
       <Button type={2} click={() => setModalActive(true)}>создать пост</Button>
 
+      <Pagination
+        pagesArray={pagesArray}
+        page={page}
+        setPage={setPage}
+      />
+
       {reversedPosts.length === 0 ?
         <Heading color='white'>Постов нет :(</Heading> :
           reversedPosts.map(post => (
@@ -31,6 +38,12 @@ const Posts = ({filter, setFilter, posts, createPost, removePost }) => {
           ))
       }
 
+      <Pagination
+        pagesArray={pagesArray}
+        page={page}
+        setPage={setPage}
+        changePostsPage={changePostsPage}
+      />
 
       <Modal
         active={modalActive}

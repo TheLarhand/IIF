@@ -4,11 +4,15 @@ import Posts from '../posts/Posts';
 import cl from './MainPage.module.css'
 import Loader from '../UI/Loader';
 
-const MainPage = ({posts, isPostsLoading, filter, setFilter, createPost, removePost}) => {
+
+const MainPage = ({posts, pagesArray, page, setPage, changePostsPage, isPostsLoading, postError, filter, setFilter, createPost, removePost}) => {
     return (
         <div>
-            {/* Сделай паггинацию и хуки для загрузки и постов */}
-            {isPostsLoading
+            {postError 
+                ?
+                <h1 className={cl.error}>Произошла ошибка {postError}</h1>
+                :
+                isPostsLoading
                 ? 
                 <div className={cl.loader}><Loader/></div>
                 : 
@@ -21,11 +25,14 @@ const MainPage = ({posts, isPostsLoading, filter, setFilter, createPost, removeP
                         filter={filter}
                         setFilter={setFilter}
                         posts={posts}
+                        page={page}
+                        setPage={setPage}
+                        changePostsPage={changePostsPage}
+                        pagesArray={pagesArray}
                         createPost={createPost}
                         removePost={removePost}
                     />
                 </div>
-                
             }
         </div>
     );

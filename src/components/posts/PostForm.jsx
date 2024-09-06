@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import cl from './Posts.module.css';
-import PostService from '../API/PostService';
+import PostService from '../../API/PostService';
 import Input from '../UI/Input';
 import Button from '../UI/Button';
 import TextArea from '../UI/TextArea';

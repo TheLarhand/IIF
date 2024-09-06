@@ -3,13 +3,28 @@ import './App.css';
 import Header from './components/header/Header';
 import Profile from './components/profile/Profile';
 import { useEffect, useState } from 'react';
-import PostService from './components/API/PostService';
+import PostService from './API/PostService';
 import MainPage from './components/mainPage/MainPage';
+import { useFetching } from './hooks/useFetching';
+import { getPageCount, getPagesArray } from './utils/pages';
 
 function App() {
 
   const [posts, setPosts] = useState([])
-  const [isPostsLoading, setIsPostsLoading] = useState(false)
+  const [totalPages, setTotalPages] = useState(0)
+  const [limit, setLimit] = useState(10)
+  const [page, setPage] = useState(1)
+
+  let pagesArray = getPagesArray(totalPages)
+  // Сделай свой хук UsePagginaion используя UseMemo, а не через массив
+  // как это сделано внутри
+
+  const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
+    const response = await PostService.getAll(limit, page);
+    setPosts(response.data);
+    const totalCount = response.headers['x-total-count']
+    setTotalPages(getPageCount(totalCount, limit))
+  })
 
   const [contentPage, setContentPage] = useState({
     mainPage: true, 
@@ -19,17 +34,6 @@ function App() {
   useEffect(() => {
     fetchPosts();
   }, [])
-
-  async function fetchPosts() {
-    setIsPostsLoading(true)
-    try {
-      const fetchedPosts = await PostService.getAll();
-      setPosts(fetchedPosts);
-    } catch (error) {
-      console.error('Error fetching posts:', error);
-    }
-    setIsPostsLoading(false)
-  } 
 
   const[filter, setFilter] = useState({
     sort: '',
@@ -46,6 +50,12 @@ function App() {
   const removePost = (id) => {
     const updatedPosts = posts.filter(post => post.id !== id);
     setPosts(updatedPosts);
+  }
+
+  //temp  2 06
+  const changePostsPage = (page) => {
+    setPage(page)
+    fetchPosts()
   }
 
   const changePage = (page) => {
@@ -70,7 +80,12 @@ function App() {
     contentToShow = (
       <MainPage
         posts={sortedAndSearchedPosts}
+        pagesArray={pagesArray}
+        page={page}
+        setPage={setPage}
+        changePostsPage={changePostsPage}
         isPostsLoading={isPostsLoading}
+        postError={postError}
         filter={filter}
         setFilter={setFilter}
         createPost={createPost}
