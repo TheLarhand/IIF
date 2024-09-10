@@ -11,8 +11,6 @@ import Pagination from '../UI/Pagination';
 const Posts = ({filter, setFilter, posts, changePostsPage, pagesArray, page, setPage, createPost, removePost }) => {
   const [modalActive, setModalActive] = useState(false);
 
-  const reversedPosts = [...posts].reverse();
-
   return (
     <div className={cl.posts}>
       <Search
@@ -25,11 +23,12 @@ const Posts = ({filter, setFilter, posts, changePostsPage, pagesArray, page, set
         pagesArray={pagesArray}
         page={page}
         setPage={setPage}
+        changePostsPage={changePostsPage}
       />
 
-      {reversedPosts.length === 0 ?
+      {posts.length === 0 ?
         <Heading color='white'>Постов нет :(</Heading> :
-          reversedPosts.map(post => (
+          posts.map(post => (
             <Post
               post={post}
               key={post.id}

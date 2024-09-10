@@ -19,35 +19,38 @@ const Header = ({changePage}) => {
   }
 
   return (
-    <div className={cl.header}>
-      <div className={cl.wrapper}>
-        <div className={cl.headerSide}>
-          <Logo onClick={() => changePage("mainPage")}/>
+    <div className={cl.headerWrapper}>
+      <div className={cl.header}>
+        <div className={cl.wrapper}>
+          <div className={cl.headerSide}>
+            <Logo onClick={() => changePage("mainPage")}/>
+          </div>
+
+          <div className={cl.headerSide}>
+            <Button click={() => setModalActive({ ...modalActive, reg: true })}>
+              Регистрация
+            </Button>
+            <Button click={() => setModalActive({ ...modalActive, log: true })}>
+            Войти
+            </Button>
+            <Ava onClick={() => changePage("profile")}/>
+          </div>
         </div>
 
-        <div className={cl.headerSide}>
-          <Button click={() => setModalActive({ ...modalActive, reg: true })}>
-            Регистрация
-          </Button>
-          <Button click={() => setModalActive({ ...modalActive, log: true })}>
-          Войти
-          </Button>
-          <Ava onClick={() => changePage("profile")}/>
-        </div>
+        <Modal active={modalActive.reg} setActive={setModalActive}>
+          <Registration
+            switchModal={switchModal}
+          />
+        </Modal>
+
+        <Modal active={modalActive.log} setActive={setModalActive}>
+          <Login 
+            switchModal={switchModal} 
+          />
+        </Modal>
       </div>
-
-      <Modal active={modalActive.reg} setActive={setModalActive}>
-        <Registration
-          switchModal={switchModal}
-        />
-      </Modal>
-
-      <Modal active={modalActive.log} setActive={setModalActive}>
-        <Login 
-          switchModal={switchModal} 
-        />
-      </Modal>
     </div>
+    
   );
 };
 

@@ -5,8 +5,8 @@ import Filter from './Filter';
 const Filters = ({filter, setFilter}) => {
 
   const options = [
-    {value: "title", sortInvert: false, name: "Sort by name A-Z"},
-    {value: "title", sortInvert: true, name: "Sort by name Z-A"},
+    {value: "title", sortInvert: true, name: "Sort by name A-Z"},
+    {value: "title", sortInvert: false, name: "Sort by name Z-A"},
 ]
 
   const [checkedSorts, setCheckedSorts] = useState([false, false, false, false, false, false])

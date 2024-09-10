@@ -29,12 +29,7 @@ const Profile = ({posts, isPostsLoading, createPost, removePost}) => {
                         userInfo={userInfo}
                         setEditingProfile={setEditingProfile}
                     />
-                    <Posts
-                        posts={posts}
-                        createPost={createPost}
-                        removePost={removePost}
-                    />
-
+{/* 
                     {isPostsLoading
                     ? 
                     <Loader/>
@@ -44,7 +39,7 @@ const Profile = ({posts, isPostsLoading, createPost, removePost}) => {
                         createPost={createPost}
                         removePost={removePost}
                     />
-                    }
+                    } */}
                 </div>
             }
         </div>

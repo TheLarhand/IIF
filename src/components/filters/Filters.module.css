@@ -1,5 +1,7 @@
 .filters {
-    width: 550px;
+    width: 300px;
+    height: 100%;
+    position: fixed;
     background-color: var(--background-color-light);
     box-sizing: border-box;
     border-right: 15px solid var(--primary-color);

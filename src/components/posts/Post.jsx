@@ -19,7 +19,7 @@ const Post = ({post, removePost}) => {
     } 
     return (
         <div className={cl.post}>
-            <Heading size={"20px"} color="rgb(130, 139, 255)">{post.title}</Heading>
+            <Heading size={"20px"} color="rgb(130, 139, 255)">{post.id}. {post.title}</Heading>
             <p className={cl.postBody}>{post.body}</p>
             <div className={cl.buttons}>
                 <div className={cl.socialBox}>

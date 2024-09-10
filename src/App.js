@@ -16,7 +16,7 @@ function App() {
   const [page, setPage] = useState(1)
 
   let pagesArray = getPagesArray(totalPages)
-  // Сделай свой хук UsePagginaion используя UseMemo, а не через массив
+  // Сделай свой хук UsePaginaion используя UseMemo, а не через массив
   // как это сделано внутри
 
   const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
     fetchPosts();
-  }, [])
+  }, [page])
 
   const[filter, setFilter] = useState({
     sort: '',
@@ -55,17 +55,16 @@ function App() {
   //temp  2 06
   const changePostsPage = (page) => {
     setPage(page)
-    fetchPosts()
   }
 
-  const changePage = (page) => {
-    if (page === "mainPage") {
+  const changePage = (contentPage) => {
+    if (contentPage === "mainPage") {
       setContentPage({
         mainPage: true,
         profile: false,
         profileEdit: false,
       });
-    } else if (page === "profile") {
+    } else if (contentPage === "profile") {
       setContentPage({
         mainPage: false,
         profile: true,
@@ -100,6 +99,8 @@ function App() {
         removePost={removePost}
       />
     )} 
+
+    console.log('App: changePostsPage', changePostsPage);
 
   return (
     <div className="App">

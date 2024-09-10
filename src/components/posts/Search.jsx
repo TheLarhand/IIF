@@ -5,7 +5,7 @@ import cl from './Posts.module.css';
 
 const Search = ({filter, setFilter}) => {
 
-    const [query, setQuery] = useState('')
+    const [query, setQuery] = useState(filter.query)
 
     const handleSearch = () => {
         setFilter({...filter, query})

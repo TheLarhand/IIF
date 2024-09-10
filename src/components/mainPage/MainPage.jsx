@@ -4,10 +4,15 @@ import Posts from '../posts/Posts';
 import cl from './MainPage.module.css'
 import Loader from '../UI/Loader';
 
-
 const MainPage = ({posts, pagesArray, page, setPage, changePostsPage, isPostsLoading, postError, filter, setFilter, createPost, removePost}) => {
     return (
-        <div>
+        
+        <div className={cl.mainPage}>
+            <Filters 
+                filter={filter}
+                setFilter={setFilter}
+            />
+            <div className={cl.leftSpace}></div>
             {postError 
                 ?
                 <h1 className={cl.error}>Произошла ошибка {postError}</h1>
@@ -16,11 +21,8 @@ const MainPage = ({posts, pagesArray, page, setPage, changePostsPage, isPostsLoa
                 ? 
                 <div className={cl.loader}><Loader/></div>
                 : 
-                <div className={cl.mainPage}>
-                    <Filters 
-                        filter={filter}
-                        setFilter={setFilter}
-                    />
+                <div >
+                    
                     <Posts
                         filter={filter}
                         setFilter={setFilter}
