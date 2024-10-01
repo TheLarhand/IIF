@@ -44,3 +44,25 @@
     gap: 10px;
     align-items: center;
 }
+
+.searchRequest {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+.searchRequest img {
+    width: 25px;
+}
+
+.noPosts {
+    color: var(--text-color-light);
+    width: 865px;
+    text-align: center;
+    margin: 20px 0;
+}

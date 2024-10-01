@@ -7,17 +7,17 @@ import PostService from './API/PostService';
 import MainPage from './components/mainPage/MainPage';
 import { useFetching } from './hooks/useFetching';
 import { getPageCount, getPagesArray } from './utils/pages';
+import { UsePaginaion } from "./hooks/usePagination"
 
 function App() {
 
   const [posts, setPosts] = useState([])
   const [totalPages, setTotalPages] = useState(0)
   const [limit, setLimit] = useState(10)
+  
   const [page, setPage] = useState(1)
 
-  let pagesArray = getPagesArray(totalPages)
-  // Сделай свой хук UsePaginaion используя UseMemo, а не через массив
-  // как это сделано внутри
+  let pagesArray = UsePaginaion(totalPages)
 
   const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
     const response = await PostService.getAll(limit, page);

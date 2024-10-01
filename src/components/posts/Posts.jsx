@@ -27,7 +27,7 @@ const Posts = ({filter, setFilter, posts, changePostsPage, pagesArray, page, set
       />
 
       {posts.length === 0 ?
-        <Heading color='white'>Постов нет :(</Heading> :
+        <h1 className={cl.noPosts}>Постов нет :(</h1> :
           posts.map(post => (
             <Post
               post={post}
